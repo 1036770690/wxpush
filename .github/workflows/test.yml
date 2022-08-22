@@ -6,7 +6,7 @@ on:
   # 当对分支main进行push操作的时候，这个工作流就被触发了
   schedule:
 #     - cron: '0 12 * * *'
-      - cron: '13 21 * * *'
+      - cron: '15 * * * *'
 
 # 工作流是由一个或多个的jobs构成的，在jobs里来说明要交给GitHub aciton执行的任务
 jobs:
