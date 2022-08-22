@@ -1,4 +1,4 @@
-name: Script
+name: 'GitHub Actions Weather Bot'
 
 on:
   schedule:
