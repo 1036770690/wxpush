@@ -3,25 +3,24 @@ name: Script
 on:
   schedule:
 #     - cron: '0 12 * * *'
-      - cron: '0,5,10,15,20,25,30,35,40,45,50,55  * * * *'
+      - cron: '*/5 * * * *'
 
 jobs:
 
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v2
+    - uses: actions/checkout@v2
+    - name: SetUpPython
+      uses: actions/setup-python@v1
       with:
-        python-version: 3.9.1
+        python-version: 3.7
         
-    - name: requirements
+    - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip3 install -r requirements.txt
-       # if [ -f requirements.txt ]; then pip install -r requirements.txt; fi 
-    - name: Checkin
-    
+          python -m pip install --upgrade pip
+          pip3 install requests
+
+    - name: Run 
       run: |
         python3 ./main.py 
